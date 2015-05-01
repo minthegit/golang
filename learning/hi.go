@@ -11,8 +11,9 @@ type Page struct {
 func main() {
 	//fmt.Print("asd")
 
-	k := &Page{Title: "aaaa", Body: nil}
-	k.Title = "kkkk"
-	fmt.Print(k.Title)
+	k := &Page{Title: "aaaa", Body: []byte{'a', 'b', 'c'}}
+	k.Title = "name"
+	fmt.Println("title : " + k.Title)
+	fmt.Println("body : " + string(k.Body))
 
 }
