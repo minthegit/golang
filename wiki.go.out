@@ -1,0 +1,18 @@
+2015/05/01 16:45:54 http: panic serving 127.0.0.1:58153: runtime error: invalid memory address or nil pointer dereference
+goroutine 29 [running]:
+net/http.func·009()
+	/usr/lib/go/src/pkg/net/http/server.go:1093 +0xae
+runtime.panic(0x5f5860, 0x8716a8)
+	/usr/lib/go/src/pkg/runtime/panic.c:248 +0x106
+main.viewHandler(0x7f70de67e528, 0xc2100980a0, 0xc210037680)
+	/home/minthe/GitHub/golang/learning/wiki.go:37 +0x1c2
+net/http.HandlerFunc.ServeHTTP(0x6a40d8, 0x7f70de67e528, 0xc2100980a0, 0xc210037680)
+	/usr/lib/go/src/pkg/net/http/server.go:1220 +0x40
+net/http.(*ServeMux).ServeHTTP(0xc210036660, 0x7f70de67e528, 0xc2100980a0, 0xc210037680)
+	/usr/lib/go/src/pkg/net/http/server.go:1496 +0x163
+net/http.serverHandler.ServeHTTP(0xc21001d410, 0x7f70de67e528, 0xc2100980a0, 0xc210037680)
+	/usr/lib/go/src/pkg/net/http/server.go:1597 +0x16e
+net/http.(*conn).serve(0xc210058400)
+	/usr/lib/go/src/pkg/net/http/server.go:1167 +0x7b7
+created by net/http.(*Server).Serve
+	/usr/lib/go/src/pkg/net/http/server.go:1644 +0x28b
