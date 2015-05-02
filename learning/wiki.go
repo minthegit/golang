@@ -43,6 +43,9 @@ func editHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		p = &Page{Title: title}
 	}
+
+	fmt.Println(p.Title)
+
 	fmt.Fprintf(w, "<h1>Editing %s</h1>"+
 		"<form action=\"/save/%s\" method=\"POST\">"+
 		"<textarea name=\"body\">%s</textarea><br>"+
@@ -62,8 +65,8 @@ func saveHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 
 	http.HandleFunc("/view/", viewHandler)
-	http.HandleFunc("/edit", editHandler)
-	http.HandleFunc("/save", saveHandler)
+	http.HandleFunc("/edit/", editHandler)
+	http.HandleFunc("/save/", saveHandler)
 	http.ListenAndServe(":8080", nil)
 
 	//wiki main
